@@ -2,7 +2,7 @@
 
 ![](./documentation/images/general.PNG)
 
-*Documentation for version: Mk1.1.2*  
+*Documentation for version: Mk1.1.3*  
 *Schmatic version: Mk1.1.1*  
 *Last updated: 11/04/2023*
 
@@ -13,6 +13,7 @@
 - [Stepper controller unit](#stepper-controller-unit)
 - [Measurement unit](#measurement-unit)
 - [Tool supply unit](#tool-supply-unit)
+- [KiCad use](#kicad-use)
 
 ## Summary
 
@@ -58,3 +59,8 @@ The tool supply has one input plug (**J12**) and three output plugs, two of them
 
 Using the PWM pins on the input plug (1 and 2 on **J12**), up to two servos can be controlled, as it is often required. Furthermore, the general purpose plug is equipped with both control and power voltage and, as it is required, a GND. 
 
+## KiCad use
+
+![](./documentation/images/symbol.PNG)
+
+To include the driver into a KiCad circuit diagram, simply import the symbol found in the "export" folder. Once imported, it can be found in the "Driver_Motor" library under the name "SYRD_MK1".
