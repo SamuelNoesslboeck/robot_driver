@@ -16,3 +16,7 @@
 # mk1.1.3/2023/04/12
 
 - Added KiCad symbol for driver
+
+# mk1.1.4/2023/04/12
+
+- Fixed issues with KiCad symbol
