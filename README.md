@@ -10,7 +10,7 @@
 
 - [Summary](#summary)
 - [Power supply](#power-supply-j1-plug)
-- [Stepper controller unit](#stepper-controller-unit)
+- [Driver unit](#driver-unit)
 - [Measurement unit](#measurement-unit)
 - [Tool supply unit](#tool-supply-unit)
 - [KiCad use](#kicad-use)
@@ -29,11 +29,11 @@ The GPIO pin requirements have been designed to fit a raspberry pi, so it is rec
 
 The driver needs two different supply sources: A control voltage with about 5V and a power voltage, usually between 12-48V. Both grounds are unified to a single one and the microcontroller, that sends the logical signals for the drivers, has to be connected to the ground and control voltage.
 
-## Stepper controller unit
+## Driver unit
 
 ![](./documentation/images/controller_unit.PNG)
 
-When it comes to precise movements, the stepper controller unit is the main part in play. Each motor is connected with a plug (**J3 - J10**), so it can be easily changed or replaced. 
+When it comes to precise movements, the driver unit is the main part in play. Each motor is connected with a plug (**J3 - J10**), so it can be easily changed or replaced. 
 
 Logic control happens over the [J2 plug](#j2-plug).
 
