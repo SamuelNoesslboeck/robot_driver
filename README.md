@@ -1,23 +1,23 @@
-# Robot driver 
+# Robot driver
 
-![](./documentation/images/general.PNG)
+![The main image](./documentation/images/general.PNG)
 
-*Documentation for version: Mk1.1.4*  
-*Schmatic version: Mk1.1.1*  
-*Last updated: 12/04/2023*
+*Documentation for version: Mk3.0.0*  
+*Schmatic version: Mk3.0.0*  
+*Last updated: 21/09/2023*
 
 ## Overview
 
 - [Summary](#summary)
 - [Power supply](#power-supply-j1-plug)
-- [Driver unit](#driver-unit)
-- [Measurement unit](#measurement-unit)
+- [Controller unit](#controller-unit)
+- [Devices section](#devices-section)
 - [Tool supply unit](#tool-supply-unit)
 - [KiCad use](#kicad-use)
 
 ## Summary
 
-A basic robot driver for controlling up to four stepper motors, eight measurement pins, advanced tools and additional functionalities. The circuit itself is a basic concept, so components can be switched or adjusted if neccessary.  
+A basic robot driver for controlling up to four stepper motors, a large number of devices like endstop switches or servo motors.
 
 NOTE: This diagram does not include voltage/current limits, as they depend on which components are actually being used.
 
@@ -25,42 +25,42 @@ The GPIO pin requirements have been designed to fit a raspberry pi, so it is rec
 
 ## Power supply (J1 plug)
 
-![](./documentation/images/power_supply.PNG)
+![Power supply](./documentation/images/power_supply.PNG)
 
 The driver needs two different supply sources: A control voltage with about 5V and a power voltage, usually between 12-48V. Both grounds are unified to a single one and the microcontroller, that sends the logical signals for the drivers, has to be connected to the ground and control voltage.
 
-## Driver unit
+## Controller unit
 
-![](./documentation/images/controller_unit.PNG)
+![Control unit](./documentation/images/controller_unit.PNG)
 
-When it comes to precise movements, the driver unit is the main part in play. Each motor is connected with a plug (**J3 - J10**), so it can be easily changed or replaced. 
+When it comes to precise movements, the controller unit is the main part in play. Each motor is connected with a plug (**J3 - J10**), so it can be easily changed or replaced.
 
 Logic control happens over the [J2 plug](#j2-plug).
 
 ### J2 plug
 
-The [J2 plug](#j2-plug) consists of 10 pins, where 9 of them are GPIO ones (one GND). All motors can be disabled using the enable pin, as they have been unified to a single one. 
+The [J2 plug](#j2-plug) consists of 10 pins, where 9 of them are GPIO ones (one GND). All motors can be disabled using the enable pin, as they have been unified to a single one.
 
-The remaining eight pins are four PWM-pins (often referenced as "step"-pins too) and four DIR-pins, both for each controller. The maximum frequency of the PWM-signal depends on the controllers used. 
+The remaining eight pins are four PWM-pins (often referenced as "step"-pins too) and four DIR-pins, both for each controller. The maximum frequency of the PWM-signal depends on the controllers used.
 
-## Measurement unit
+## Devices section
 
-![](./documentation/images/measurement_unit.PNG)
+![Devices section](./documentation/images/devices_section.PNG)
 
-The measurement unit enables a connection of up to eight switches (default ON), each one being connected to a LED for debugging. The resistors have a high value, as the current flowing into the microcontroller should be as low as possible.
+The devices section is equipped with a lot of 3pin connectors which can be used to power servo motors or measurement units.
 
 ## Tool supply unit
 
-![](./documentation/images/tool_supply.PNG)
+![Tool supply](./documentation/images/tool_supply.PNG)
 
 When it comes to completing more complex tasks, then advanced tools are required, which can take a lot of resources to maintain. Therefore, the tool supply has to be as flexible as possible to cover most of the different applications.
 
 The tool supply has one input plug (**J12**) and three output plugs, two of them being servo output plugs (**J14**, **J15**) and one general purpose one (**J16**).
 
-Using the PWM pins on the input plug (1 and 2 on **J12**), up to two servos can be controlled, as it is often required. Furthermore, the general purpose plug is equipped with both control and power voltage and, as it is required, a GND. 
+Using the PWM pins on the input plug (1 and 2 on **J12**), up to two servos can be controlled, as it is often required. Furthermore, the general purpose plug is equipped with both control and power voltage and, as it is required, a GND.
 
 ## KiCad use
 
-![](./documentation/images/symbol.PNG)
+![KiCad Symbol](./documentation/images/symbol.PNG)
 
-To include the driver into a KiCad circuit diagram, simply import the symbol found in the "export" folder. Once imported, it can be found in the "Driver_Motor" library under the name "SYRD_MK1".
+To include the driver into a KiCad circuit diagram, simply import the symbol found in the "export" folder. Once imported, it can be found in the "Driver_Motor" library under the name "SYRD_MK3".
