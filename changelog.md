@@ -24,3 +24,6 @@
 - Fixed issues with KiCad symbol
 
 ## mk3.0.0/2023/09/21
+
+- Added more plugges and labeled them as "devices"
+- General updates for useability
